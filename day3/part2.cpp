@@ -2,10 +2,10 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <utils.hpp>
 
 using namespace std;
 
-vector<vector<char> > read_input();
 int run_slope(pair<int, int>, int, int, vector<vector<char> > &matrix);
 
 int main() {
@@ -32,20 +32,4 @@ int run_slope(pair<int, int> slope, int rows, int cols, vector<vector<char> > &m
     }
 
     return trees;
-}
-
-vector<vector<char> > read_input() {
-    ifstream ifs("input1.txt");
-    char tempchar;
-    string buffer;
-    vector<vector<char> > result;
-    while (getline(ifs, buffer)) {
-        istringstream iss(buffer);
-        vector<char> curr_vec;
-        while (iss >> tempchar) {
-           curr_vec.push_back(tempchar);
-        }
-        result.push_back(curr_vec);
-    }
-    return result;
 }
